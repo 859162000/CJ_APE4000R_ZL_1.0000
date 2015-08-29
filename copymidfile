@@ -1,0 +1,29 @@
+#!/bin/sh
+cp $1/APP/CGlobalArgLib.h ./APP/COMMON
+cp $1/APP/DataClassDesign.h ./APP/COMMON
+cp $1/APP/ClearDepotFunc.h ./APP/COMMON
+
+cp $1/APP/JSKMANAGE/JSKInfoDef.h ./APP/COMMON
+cp $1/APP/JSKMANAGE/JSKInfoFunc.h ./APP/COMMON
+cp $1/APP/JSKMANAGE/JSKInvManageProc.h ./APP/COMMON
+cp $1/APP/JSKMANAGE/JSKMakeInvoice.h ./APP/COMMON
+cp $1/APP/JSKMANAGE/JSKManageProc.h ./APP/COMMON
+cp $1/APP/JSKMANAGE/JSKDeclareProc.h ./APP/COMMON
+
+cp $1/APP/SERVXML/AppProtocol.h ./APP/COMMON
+cp $1/APP/SERVXML/AppProtocolDef.h ./APP/COMMON
+cp $1/APP/SERVXML/ProtocolCommon.h ./APP/COMMON
+cp $1/APP/SERVXML/ProtocolStream.h ./APP/COMMON
+cp $1/APP/SERVXML/ProtocolXML.h ./APP/COMMON
+cp $1/APP/SERVXML/ServWlcb.h ./APP/COMMON
+cp $1/APP/SERVXML/ServXml_Fpjxzjs.h ./APP/COMMON
+cp $1/APP/SERVXML/ServXml_InvUpload.h ./APP/COMMON
+cp $1/APP/SERVXML/ServXml_InvUploadResult.h ./APP/COMMON
+cp $1/APP/SERVXML/ServXml_NsrPara.h ./APP/COMMON
+cp $1/APP/SERVXML/ServXml_Qkxxxz.h ./APP/COMMON
+cp $1/APP/SERVXML/ServXml_Yccb.h ./APP/COMMON
+cp $1/APP/SERVXML/StructOrganize.h ./APP/COMMON
+cp $1/APP/SERVXML/YccbOrganize.h ./APP/COMMON
+cp $1/APP/SERVXML/InvUploadOrganize.h ./APP/COMMON
+cp $1/APP/SERVXML/GetResultOrganize.h ./APP/COMMON
+cp $1/APP/SERVXML/GlobalNetArg.h ./APP/COMMON
