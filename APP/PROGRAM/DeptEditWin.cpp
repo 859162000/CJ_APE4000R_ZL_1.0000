@@ -382,7 +382,7 @@ UINT8 CDeptEditWin::CheckInputValid(string &strErr)
 	ret =is_Figure((char *)(m_pInput6->m_contentBuf));
 	if (ret != SUCCESS)
 	{
-		strErr = "请输入1～99区间部类号";
+		strErr = "请输入1～99区间的整数";
 		m_pInputList->SetFocusToObj(m_pInput6);
 		return FAILURE;
 	}
