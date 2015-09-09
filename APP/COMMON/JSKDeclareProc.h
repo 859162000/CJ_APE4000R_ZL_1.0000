@@ -53,7 +53,7 @@ public:
 	@param[out] strErr   ¥ÌŒÛ–≈œ¢
 	@return  1 SUCCESS£ª 0  FAILURE
 	*/
-	static INT32 SKPBSP_Proc(string fplxdm, UINT8 czlx, string &strErr);
+	static INT32 SKPBSP_Proc(string fplxdm, UINT8 czlx,string qtxx, string &strErr);
 
 	static INT32 DeclareAuthority(string &strErr);
 

@@ -13,7 +13,7 @@
 
 #define MAX_DOT_NUM			2
 #define MAX_AMOUNT_VALUE	0xFFFFFF
-
+#define MAX_AMOUNT_INT   100000000000ULL
 #define MAX_DOT_NUM_A		3
 
 
@@ -442,6 +442,11 @@ INT32 CheckFloatBit(double f)
 
 INT64 double2int(double input)
 {
+	if ( input>=MAX_AMOUNT_INT)
+	{
+		return MAX_AMOUNT_INT;
+	}
+
 	INT64 tmpNum = (INT64)(input * 10.0);
 	
 	INT64 tmp = tmpNum;
