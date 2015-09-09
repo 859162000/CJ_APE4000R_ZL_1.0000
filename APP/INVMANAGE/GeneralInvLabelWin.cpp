@@ -13,6 +13,8 @@
 #include "CaMsgBox.h"
 #include "TDateTime.h"
 
+#include "AutoIssueFunc.h"
+
 #include "LOGCTRL.h"
 //#define NO_POS_DEBUG
 #include "pos_debug.h"
@@ -255,6 +257,13 @@ int CGInvLabelWin::ProcEvent(int iEvent,unsigned char *pEventData, int iDataLen)
 			ChangeWin(GENERAL_INV_MTLBTN_WIN);			
 			return SUCCESS;
 			break;
+#if (RELEASE_VER == 0)
+		case DISCOUNT_KEY:
+			DBG_PRINT(("Ω¯»ÎDISCOUNT_KEY"));
+			UINT8 nIfInvSum;
+			AutoIssue(nIfInvSum);	
+			break;
+#endif
 		default:
 			break;
 		}
