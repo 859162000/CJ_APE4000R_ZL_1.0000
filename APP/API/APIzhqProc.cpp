@@ -354,6 +354,7 @@ INT32  CAPIzhqProc::NetDeclareProc_API(CYWXML_GY &ywxml_gy, string &strErr)
 	UINT8 NetBusinessFlag = 1;
 	
 	ret = m_SerialProc.sjcb_Serial(ywxml_gy, jzlx, NetBusinessFlag, strErr);
+	DBG_PRINT(("ret= %d strErr= %s",ret,strErr.c_str()));
 	return ret;
 }
 
@@ -380,9 +381,31 @@ INT32  CAPIzhqProc::DeclareProc_API(CYWXML_GY &ywxml_gy, UINT8 jzlx, string &str
 						//2：清零解锁
 						//3：反写购票信息
 						//4：校准税控设备时钟
-		ret =m_SerialProc.skpbspzhcz_Serial(ywxml_gy, czlx, strErr); //报税盘
+		string hzxx(""),qtxx("");
+		
+		ret =m_SerialProc.skpbspzhcz_Serial(ywxml_gy, czlx, hzxx,qtxx,strErr); //报税盘
 	}
 	
+	
+	return ret;
+	}
+INT32 CAPIzhqProc::XGJSPSZ_API(CYWXML_GY &ywxml_gy, string szxx, string &strErr)
+{
+	UINT8 ret = SUCCESS;
+	
+	DBG_PRINT(("ywxml_gy.m_nsrsbh : %s", ywxml_gy.m_nsrsbh.c_str()));
+	DBG_PRINT(("ywxml_gy.m_sksbbh : %s", ywxml_gy.m_sksbbh.c_str()));
+	DBG_PRINT(("ywxml_gy.m_sksbkl : %s", ywxml_gy.m_sksbkl.c_str()));
+	DBG_PRINT(("ywxml_gy.m_fplxdm : %s", ywxml_gy.m_fplxdm.c_str()));
+	DBG_PRINT(("ywxml_gy.m_jqbh : %s", ywxml_gy.m_jqbh.c_str()));
+	
+	UINT8 czlx=4;	//1：数据抄报
+	//2：清零解锁
+	//3：反写购票信息
+	//4：校准税控设备时钟
+
+	string hzxx("");
+	ret =m_SerialProc.skpbspzhcz_Serial(ywxml_gy, czlx,hzxx,szxx, strErr); 
 	
 	return ret;
 }
@@ -411,7 +434,9 @@ INT32  CAPIzhqProc::UpdateTaxProc_API(CYWXML_GY &ywxml_gy, string &strErr)
 						//3：反写购票信息
 						//4：校准税控设备时钟
 
-	ret = m_SerialProc.skpbspzhcz_Serial(ywxml_gy, czlx, strErr);
+	string hzxx(""),qtxx("");
+	
+	ret = m_SerialProc.skpbspzhcz_Serial(ywxml_gy, czlx,hzxx, qtxx,strErr);
 	
 	return ret;
 }

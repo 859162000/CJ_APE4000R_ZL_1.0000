@@ -228,13 +228,13 @@ INT32 CBusinessJSKProc::FPCX_Business(CYWXML_GY &ywxml_gy, UINT8 cxfs, string cx
 }
 
 //税控设备报税盘组合操作
-INT32 CBusinessJSKProc::SKPBSP_Business(CYWXML_GY &ywxml_gy, UINT8 czlx, string &strErr)
+INT32 CBusinessJSKProc::SKPBSP_Business(CYWXML_GY &ywxml_gy, UINT8 czlx,string qtxx, string &strErr)
 {
 	INT32 ret = JSK_SUCCESS;
 
 	CJSKManageProc::set_JSKPara(ywxml_gy.m_jqbh, ywxml_gy.m_sksbkl, ywxml_gy.m_bspkl);
 	MutexLock();
-	ret = CJSKDeclareProc::SKPBSP_Proc(ywxml_gy.m_fplxdm, czlx, strErr);
+	ret = CJSKDeclareProc::SKPBSP_Proc(ywxml_gy.m_fplxdm, czlx, qtxx,strErr);
 	MutexUnlock();
 	
 	return ret;

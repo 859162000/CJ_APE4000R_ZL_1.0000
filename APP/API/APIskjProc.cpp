@@ -531,12 +531,29 @@ INT32  CAPIskjProc::NetDeclareProc_API(CYWXML_GY &ywxml_gy, string &strErr)
 
 	CDeclareBusinessFunc  declareBusFun;
 	ret= declareBusFun.NetDeclareProc(ywxml_gy, strErr);
-	
+		DBG_PRINT(("ret= %d strErr= %s",ret,strErr.c_str()));
 	if (ret !=SUCCESS)
 	{
 		return FAILURE;
 	}
 
+	return ret;
+}
+	
+/*!
+ 修改金税盘时钟
+*/
+INT32 CAPIskjProc::XGJSPSZ_API(CYWXML_GY &ywxml_gy, string szxx, string &strErr)
+{
+	INT32 ret = SUCCESS;
+	
+	CManageBusinessFunc  managBusFun;
+	ret= managBusFun.UpdateClockProc(ywxml_gy, szxx,strErr);
+	DBG_PRINT(("ret= %d strErr= %s",ret,strErr.c_str()));
+	if (ret !=SUCCESS)
+	{
+		return FAILURE;
+	}
 	return ret;
 }
 
